@@ -3,13 +3,16 @@ import { epochAdjustment, TestAddress, TestNetworkType } from './SymbolData'
 import { requestSign, setTransaction } from 'sss-module'
 import {
   AccountKeyLinkTransaction,
+  AccountMetadataTransaction,
   Deadline,
   LinkAction,
   PlainMessage,
   TransferTransaction,
+  UInt64,
 } from 'symbol-sdk'
 
 const deadline = Deadline.create(epochAdjustment)
+const emptyValue = new Uint8Array(10)
 
 // ACCOUNT_KEY_LINK
 export const createAccountKeyLink = () => {
@@ -22,7 +25,16 @@ export const createAccountKeyLink = () => {
 }
 
 // ACCOUNT_METADATA
-export const createAccountMetadata = () => {}
+export const createAccountMetadata = () => {
+  return AccountMetadataTransaction.create(
+    deadline,
+    TestAddress,
+    UInt64.fromUint(1000),
+    1,
+    emptyValue,
+    TestNetworkType
+  )
+}
 
 // ACCOUNT_MOSAIC_RESTRICTION
 export const createAccountMosaicRestriction = () => {}

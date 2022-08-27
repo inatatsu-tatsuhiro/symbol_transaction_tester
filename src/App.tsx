@@ -1,6 +1,10 @@
 import './App.css'
 import { requestSign, setTransaction } from 'sss-module'
-import { createAccountKeyLink, createTransfer } from './libs/TransactionCreater'
+import {
+  createAccountKeyLink,
+  createAccountMetadata,
+  createTransfer,
+} from './libs/TransactionCreater'
 import { Transaction, TransactionType } from 'symbol-sdk'
 import { txs } from './libs/SymbolData'
 
@@ -10,7 +14,8 @@ function App() {
       switch (type) {
         case TransactionType.ACCOUNT_KEY_LINK:
           return createAccountKeyLink()
-        // case TransactionType.ACCOUNT_METADATA:
+        case TransactionType.ACCOUNT_METADATA:
+          return createAccountMetadata()
         // case TransactionType.ACCOUNT_MOSAIC_RESTRICTION:
         // case TransactionType.ACCOUNT_OPERATION_RESTRICTION:
         // case TransactionType.ADDRESS_ALIAS:
