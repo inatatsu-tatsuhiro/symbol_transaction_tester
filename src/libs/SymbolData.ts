@@ -2,9 +2,9 @@ import { NetworkType, Address, Account, TransactionType } from 'symbol-sdk'
 
 const privatekey = import.meta.env.VITE_TEST_ACCOUNT_PRIVATE_KEY as string
 
-export const epochAdjustment = 1637848847
+export const epochAdjustment = 1667250467
 export const generationHash =
-  '7FCCD304802016BEBBCD342A332F91FF1F3BB5E902988B352697BE245F48E836'
+  '49D6E1CE276A85B70EAFE52349AACCA389302E7A9754BCF1221E79494FC665A4'
 export const TestNetworkType = NetworkType.TEST_NET
 
 export const TestAccount = Account.createFromPrivateKey(
